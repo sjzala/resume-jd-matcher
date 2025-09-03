@@ -14,7 +14,7 @@ htmlcov/
 data/raw/*
 !data/raw/.gitkeep
 
-models/
+/models/
 *.bin
 *.faiss
 *.pkl

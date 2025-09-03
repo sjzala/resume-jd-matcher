@@ -1,0 +1,11 @@
+defaults:
+  - model: bi_encoder
+  - _self_
+
+paths:
+  data_processed: ${oc.env:DATA_DIR,data/processed}
+  index: ${oc.env:INDEX_DIR,data/index}
+
+eval:
+  top_k: 5
+  metrics: [mrr, ndcg, p_at_k]

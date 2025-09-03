@@ -1,0 +1,5 @@
+name: bi_encoder
+model_name: sentence-transformers/all-mpnet-base-v2
+embedding_dim: 768
+normalize: true
+batch_size: 32
