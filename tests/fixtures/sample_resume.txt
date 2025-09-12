@@ -1,0 +1,18 @@
+Jordan Patel
+ML Engineer, 4 years experience
+
+Summary
+Machine learning engineer focused on search relevance and recommendations.
+
+Experience
+Acme Marketplace - Senior ML Engineer (2022-present)
+Owned the candidate-generation service for the recommendations team.
+Migrated retrieval from Elasticsearch BM25 to a FAISS-backed bi-encoder; NDCG@5 +9 percent.
+Shipped a cross-encoder reranker behind a feature flag; held holdout AUC +0.04.
+
+NimbusAI - ML Engineer (2020-2022)
+Trained ranking models on click data using LightGBM and PyTorch.
+Built the offline evaluation harness and weekly drift reports.
+
+Skills
+Python, PyTorch, FAISS, TorchServe, Kubernetes, FastAPI, SQL, MLflow.

@@ -1,0 +1,17 @@
+Senior Machine Learning Engineer - Search
+
+We are hiring a Senior ML Engineer to lead search relevance work.
+
+Responsibilities
+- Own bi-encoder retrieval and cross-encoder reranking for the core search.
+- Drive offline and online evaluation, including A/B testing.
+- Productionize models in Python with low-latency serving on Kubernetes.
+
+Requirements
+- 4+ years building production ML systems.
+- Strong Python and PyTorch, comfortable with FAISS or similar.
+- Experience shipping ranking models at scale.
+
+Nice to have
+- Familiarity with feature stores and vector databases.
+- Prior work on RAG or LLM-augmented retrieval.
