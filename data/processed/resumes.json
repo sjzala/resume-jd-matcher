@@ -1,0 +1,27 @@
+[
+  {
+    "candidate_id": "r01",
+    "summary": "ML Engineer with 4 years building search and recommendation systems.",
+    "text": "Machine Learning Engineer with 4 years of experience. Built large-scale recommendation systems at a marketplace company. Strong Python and PyTorch. Deployed models on Kubernetes via TorchServe. Worked with FAISS vector indexes and a Feast feature store. Recent project: cross-encoder reranker lifted NDCG@5 by 14%."
+  },
+  {
+    "candidate_id": "r02",
+    "summary": "NLP researcher focused on retrieval-augmented generation.",
+    "text": "NLP researcher with publications at ACL and EMNLP. Three years of experience with HuggingFace Transformers and PyTorch. Built a RAG system for legal document QA with bi-encoder retrieval and a reranker. Evaluated LLM outputs with both human and LLM-as-judge protocols."
+  },
+  {
+    "candidate_id": "r03",
+    "summary": "Growth data scientist, A/B testing and causal inference.",
+    "text": "Data Scientist on a Growth team for 3 years. Designed and analyzed 150+ A/B tests. Strong SQL and Python. Stakeholder communication with product and exec. Built attribution models using causal inference techniques (DoWhy, EconML)."
+  },
+  {
+    "candidate_id": "r04",
+    "summary": "Computer vision engineer, medical imaging.",
+    "text": "Computer Vision Engineer with 2 years in medical imaging. Trained ResNet and Swin Transformer models on DICOM data. Built calibration and OOD detection layers. PyTorch, MONAI. Familiar with HIPAA constraints."
+  },
+  {
+    "candidate_id": "r05",
+    "summary": "Backend engineer transitioning into ML.",
+    "text": "Backend Engineer with 5 years of Python and FastAPI experience. Built APIs serving 10k QPS on Kubernetes. Recently completed a self-study program in machine learning. Built a sentiment classification side project. Looking to move into ML Engineering roles."
+  }
+]

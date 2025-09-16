@@ -1,0 +1,62 @@
+[
+  {
+    "job_id": "j01",
+    "title": "Senior Machine Learning Engineer",
+    "seniority": "senior",
+    "text": "We are hiring a Senior ML Engineer to build production recommendation systems. Strong Python, PyTorch, and experience deploying models on Kubernetes. Familiarity with feature stores and vector search."
+  },
+  {
+    "job_id": "j02",
+    "title": "NLP Research Engineer",
+    "seniority": "mid",
+    "text": "NLP Research Engineer to work on retrieval-augmented generation. PhD or strong publications preferred. PyTorch, HuggingFace Transformers, and experience with evaluation of LLMs."
+  },
+  {
+    "job_id": "j03",
+    "title": "Data Scientist - Growth",
+    "seniority": "mid",
+    "text": "Data Scientist on the Growth team. A/B testing, causal inference, and SQL-heavy analytics. Python, pandas, statsmodels. Communicate findings to product and exec stakeholders."
+  },
+  {
+    "job_id": "j04",
+    "title": "Computer Vision Engineer",
+    "seniority": "mid",
+    "text": "Computer Vision Engineer for medical imaging. Train and evaluate CNN and ViT models. Knowledge of DICOM, image augmentation, and model calibration. PyTorch required."
+  },
+  {
+    "job_id": "j05",
+    "title": "MLOps Engineer",
+    "seniority": "senior",
+    "text": "MLOps Engineer to own the ML platform. Kubeflow, MLflow, Airflow. CI/CD for ML pipelines. Terraform and AWS. Strong Python and Go."
+  },
+  {
+    "job_id": "j06",
+    "title": "Backend Engineer - Python",
+    "seniority": "mid",
+    "text": "Backend Engineer building APIs in FastAPI and Postgres. Docker, Kubernetes, and event-driven systems with Kafka. No ML required."
+  },
+  {
+    "job_id": "j07",
+    "title": "Applied Scientist - Search",
+    "seniority": "senior",
+    "text": "Applied Scientist on Search Relevance. Learning-to-rank, bi-encoder and cross-encoder retrieval, and large-scale evaluation. Python and PyTorch."
+  },
+  {
+    "job_id": "j08",
+    "title": "Junior Data Analyst",
+    "seniority": "junior",
+    "text": "Junior Data Analyst. SQL, Tableau, and Excel. Build dashboards for the marketing team. Bachelor's degree in a quantitative field."
+  },
+  {
+    "job_id": "j09",
+    "title": "ML Engineer - Recommendations",
+    "seniority": "mid",
+    "text": "ML Engineer on the Recommendations team. Build candidate generation and ranking models. PyTorch, Spark, and SQL. Productionize models with low-latency serving."
+  },
+  {
+    "job_id": "j10",
+    "title": "Bioinformatics Scientist",
+    "seniority": "mid",
+    "text": "Bioinformatics Scientist. Single-cell RNA-seq analysis, Python, R, and Nextflow pipelines. Collaborate with wet-lab scientists."
+  }
+]
