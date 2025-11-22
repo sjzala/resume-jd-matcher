@@ -24,7 +24,7 @@ index:
 	.venv/bin/python -m matcher.pipeline.index
 
 eval:
-	.venv/bin/python -m matcher.eval.eval_runner
+	OMP_NUM_THREADS=1 TOKENIZERS_PARALLELISM=false .venv/bin/python -m matcher.eval.eval_runner
 
 api:
 	.venv/bin/uvicorn matcher.api.main:app --reload --port 8000
