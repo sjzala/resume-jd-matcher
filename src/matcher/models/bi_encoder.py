@@ -27,7 +27,8 @@ class BiEncoderMatcher:
             normalize_embeddings=True,
             show_progress_bar=False,
         )
-        return vecs.astype(np.float32)
+        out: np.ndarray = vecs.astype(np.float32)
+        return out
 
     def build_index(self, docs: dict[str, str]) -> None:
         ids = list(docs.keys())
@@ -44,7 +45,7 @@ class BiEncoderMatcher:
         scores, idx = self._bundle.index.search(q, k)
         return [
             (self._bundle.ids[i], float(s))
-            for s, i in zip(scores[0], idx[0])
+            for s, i in zip(scores[0], idx[0], strict=False)
             if i != -1
         ]
 

@@ -25,5 +25,5 @@ class TfidfMatcher:
             raise RuntimeError("call fit before search")
         q_vec = self.vectorizer.transform([query])
         sims = cosine_similarity(q_vec, self._matrix)[0]
-        ranked = sorted(zip(self._doc_ids, sims), key=lambda x: x[1], reverse=True)
+        ranked = sorted(zip(self._doc_ids, sims, strict=False), key=lambda x: x[1], reverse=True)
         return [(doc_id, float(score)) for doc_id, score in ranked[:k]]

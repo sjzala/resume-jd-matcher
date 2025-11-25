@@ -30,7 +30,10 @@ def mean_reciprocal_rank(
         raise ValueError("mismatched query counts")
     if not retrieved_per_query:
         return 0.0
-    rrs = [reciprocal_rank(r, g) for r, g in zip(retrieved_per_query, relevant_per_query)]
+    rrs = [
+        reciprocal_rank(r, g)
+        for r, g in zip(retrieved_per_query, relevant_per_query, strict=False)
+    ]
     return float(np.mean(rrs))
 
 

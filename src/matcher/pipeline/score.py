@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+from typing import Any
 
 from matcher.data.ingest import load_jobs
 from matcher.features.skill_extract import skill_overlap
@@ -14,7 +15,7 @@ def score_resume(
     resume_text: str,
     top_k: int = 5,
     use_rerank: bool = True,
-) -> list[dict]:
+) -> list[dict[str, Any]]:
     jobs = load_jobs(ROOT / "data" / "processed" / "jobs.json")
     job_docs = {j.job_id: j.raw_text for j in jobs}
     job_by_id = {j.job_id: j for j in jobs}
@@ -30,7 +31,7 @@ def score_resume(
     else:
         candidates = candidates[:top_k]
 
-    results = []
+    results: list[dict[str, Any]] = []
     for jid, score in candidates:
         matched, missing = skill_overlap(resume_text, job_docs[jid])
         results.append(

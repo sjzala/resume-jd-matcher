@@ -35,7 +35,7 @@ def _graded(eval_set: dict[str, dict[str, float]]) -> dict[str, dict[str, float]
 def _score_stage(
     name: str,
     retrieved_per_q: list[list[str]],
-    eval_set: dict,
+    eval_set: dict[str, dict[str, float]],
     note: str = "",
 ) -> StageResult:
     binary = _binary_relevant(eval_set)
@@ -43,8 +43,14 @@ def _score_stage(
     candidate_ids = list(eval_set.keys())
     relevant_binary = [binary[cid] for cid in candidate_ids]
     mrr = mean_reciprocal_rank(retrieved_per_q, relevant_binary)
-    ndcgs = [ndcg_at_k(retrieved_per_q[i], graded[cid], k=5) for i, cid in enumerate(candidate_ids)]
-    ps = [precision_at_k(retrieved_per_q[i], binary[cid], k=5) for i, cid in enumerate(candidate_ids)]
+    ndcgs = [
+        ndcg_at_k(retrieved_per_q[i], graded[cid], k=5)
+        for i, cid in enumerate(candidate_ids)
+    ]
+    ps = [
+        precision_at_k(retrieved_per_q[i], binary[cid], k=5)
+        for i, cid in enumerate(candidate_ids)
+    ]
     return StageResult(
         name=name,
         mrr=mrr,
@@ -82,7 +88,7 @@ def run() -> list[StageResult]:
 
     cross = CrossEncoderReranker()
     cross_retrieved: list[list[str]] = []
-    for cid, top in zip(eval_set.keys(), bi_retrieved):
+    for cid, top in zip(eval_set.keys(), bi_retrieved, strict=False):
         top_n = top[:20]
         candidates = [(jid, job_docs[jid]) for jid in top_n]
         reranked = cross.rerank(resume_by_id[cid].raw_text, candidates, top_k=len(top_n))
@@ -92,9 +98,12 @@ def run() -> list[StageResult]:
     llm = LLMReranker()
     if llm.available:
         llm_retrieved: list[list[str]] = []
-        for cid, top in zip(eval_set.keys(), cross_retrieved):
+        for cid, top in zip(eval_set.keys(), cross_retrieved, strict=False):
             top_n = top[:10]
-            scored = [llm.score_pair(resume_by_id[cid].raw_text, job_docs[jid], jid) for jid in top_n]
+            scored = [
+                llm.score_pair(resume_by_id[cid].raw_text, job_docs[jid], jid)
+                for jid in top_n
+            ]
             ranked = sorted(scored, key=lambda v: v.score, reverse=True)
             llm_retrieved.append([v.job_id for v in ranked])
         results.append(_score_stage("+ LLM rerank (Claude Haiku)", llm_retrieved, eval_set))

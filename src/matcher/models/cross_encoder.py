@@ -16,7 +16,7 @@ class CrossEncoderReranker:
         pairs = [(query, doc) for _, doc in candidates]
         scores = self.model.predict(pairs)
         ranked = sorted(
-            zip([cid for cid, _ in candidates], scores),
+            zip([cid for cid, _ in candidates], scores, strict=False),
             key=lambda x: x[1],
             reverse=True,
         )
