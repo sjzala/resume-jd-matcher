@@ -1,3 +1,15 @@
+---
+title: Resume JD Matcher
+emoji: "\U0001F4CB"
+colorFrom: indigo
+colorTo: blue
+sdk: docker
+app_port: 7860
+pinned: false
+license: mit
+short_description: Two-stage resume-to-JD matcher (bi-encoder + cross-encoder)
+---
+
 # Resume to Job Description Matcher
 
 Two-stage information-retrieval system that scores resume-to-JD fit, surfaces missing skills, and (with an API key) generates LLM rationale. Built as a portfolio project demonstrating the full ML lifecycle.

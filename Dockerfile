@@ -11,6 +11,12 @@ COPY src ./src
 RUN pip install --upgrade pip && pip install -e .
 
 COPY data ./data
+COPY app.py ./app.py
 
-EXPOSE 8000
-CMD ["uvicorn", "matcher.api.main:app", "--host", "0.0.0.0", "--port", "8000"]
+EXPOSE 7860
+ENV STREAMLIT_SERVER_HEADLESS=true \
+    STREAMLIT_BROWSER_GATHER_USAGE_STATS=false \
+    OMP_NUM_THREADS=1 \
+    TOKENIZERS_PARALLELISM=false
+
+CMD ["streamlit", "run", "src/matcher/ui/app.py", "--server.port", "7860", "--server.address", "0.0.0.0"]
